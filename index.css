@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    background-color: #1C1C1C;
+    font-family: 'Inter', sans-serif;
+    color: #D5D4D8;
+}
+
+button,
+select {
+    font-family: 'Inter', sans-serif;
+    color: #D5D4D8;
+    border-radius: 5px;
+}
+
+.container {
+    background-color: #1F2937;
+    width: 550px;
+    margin-inline: auto;
+}
+
+header {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    padding: 24px 12px;
+}
+
+.hex-color {
+    width: 62px;
+	height: 42px;
+    border: 0.5px solid #D1D5DB;
+    cursor: pointer;
+}
+.hex-color::-webkit-color-swatch-wrapper {
+	padding: 3px;
+}
+.hex-color::-webkit-color-swatch {
+    border: 0.5px solid #313131;
+}
+
+.mode {
+    background-color: #1F293A;
+    border: 1px solid #D1D5DB;
+    font-size: 1rem;
+    flex: auto;
+    padding-inline: 12px;
+    cursor: pointer;
+}
+
+.get-btn {
+    background-color: #3D4B60;
+    font-weight: 500;
+    font-size: 0.75rem;
+    border: none;
+    padding-inline: 12px;
+    cursor: pointer;
+}
+
+.get-btn:active { transform: scale(0.95); }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.color-strip {
+    height: 416px;
+}
+
+.color-name {
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 24px;
+    text-align: center;
+    color: #D5D4D8;
+    margin-block: 10px;
+}
