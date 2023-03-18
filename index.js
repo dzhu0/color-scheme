@@ -3,14 +3,14 @@ const url = "https://www.thecolorapi.com/scheme"
 document.getElementById('get-btn').addEventListener('click', getColor)
 
 function getColor() {
-    const clean = document.getElementById('hex-color').value.replace('#', '')
+    const clean = document.getElementById('color-input').value.replace('#', '')
     const mode = document.getElementById('mode').value
 
     fetch(`${url}?hex=${clean}&mode=${mode}`)
         .then(res => res.json())
         .then(data => {
             const html = getColorStripsHtml(data.colors)
-            render(html)
+            document.getElementById('grid').innerHTML = html
         })
 }
 
@@ -25,8 +25,4 @@ function getColorStripsHtml(colors) {
                 <p class="color-name">${color.hex.value}</p>
             </div>`
     }).join('')
-}
-
-function render(html) {
-    document.getElementById('grid').innerHTML = html
 }
