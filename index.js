@@ -9,20 +9,20 @@ function getColor() {
     fetch(`${url}?hex=${clean}&mode=${mode}`)
         .then(res => res.json())
         .then(data => {
-            const html = getColorStripsHtml(data.colors)
-            document.getElementById('grid').innerHTML = html
+            document.getElementById('grid').innerHTML = getColorStripsHtml(data.colors)
         })
 }
 
 function getColorStripsHtml(colors) {
-    return colors.map((color) => {
+    return colors.map(color => {
+        const { value } = color.hex
         return `
             <div>
                 <div
                     class="color-strip"
-                    style="background-color: ${color.hex.value};">
+                    style="background-color: ${value};">
                 </div>
-                <p class="color-name">${color.hex.value}</p>
+                <p class="color-name">${value}</p>
             </div>`
     }).join('')
 }
